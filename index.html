@@ -8,6 +8,30 @@
 
 <h1>Accessible multi-path form</h1>
 
+<form>
+
+  <fieldset>
+    <legend>Football fan?</legend>
+    <label for="football-fan-yes">Yes</label>
+    <input id="football-fan-yes" name="football-fan" type="radio" value="yes" />
+    <label for="football-fan-no">No</label>
+    <input id="football-fan-no" name="football-fan" type="radio" value="no" />
+  </fieldset>
+
+  <fieldset>
+    <legend>Your team</legend>
+    <label for="team">Choose team</label>
+    <select id="team" name="team">
+      <option value="">Choose</option>
+      <option value="derby-county">Derby County</option>
+      <option value="nottingham-forest">Nottingham Forest</option>
+      <option value="middlesbrough">Middlesbrough</option>
+    </select>
+  </fieldset>
+
+  <input type="submit" value="Send" />
+
+</form>
 
 </body>
 </html>
