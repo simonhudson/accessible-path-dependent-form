@@ -1,33 +1,45 @@
-function doToggle(selector) {
-  console.log(selector);
-  var elements = document.querySelectorAll(selector);
-  console.log(elements.length);
-  Array.prototype.forEach.call(elements, function(el) {
-    if (el.style.display === 'block')
-      el.style.display = 'none';
-    else
-      el.style.display = 'block';
+function hideElement(selector) {
+  forEach(selector, function(el) {
+    el.style.display = 'none';
   });
 }
 
-function toggleElement(selector) {
-  doToggle(selector, true);
+function showElement(selector) {
+  forEach(selector, function(el) {
+    el.style.display = 'block';
+  });
 }
 
 function eventListeners() {
 
-  var toggle = document.querySelectorAll('[data-toggle]');
-  Array.prototype.forEach.call(toggle, function(el) {
-    var toggleTarget = el.getAttribute('data-toggle');
+  forEach('[data-toggle]', function(el) {
     el.onclick = function() {
-      doToggle('.' + toggleTarget);
-    };
+      var target = document.querySelector('[data-toggle-target=' + el.getAttribute('data-toggle') + ']');
+      if (el.checked)
+        console.log('checked');
+      else
+        console.log('not');
+
+      // if (el.value === toggleIf) {
+      //   if (target.style.display === 'none')
+      //     target.style.display = 'block';
+      //   else
+      //     target.style.display = 'none';
+      // }
+    }
   });
 
 }
 
+function forEach(selector, callback) {
+  var elements = document.querySelectorAll(selector);
+  Array.prototype.forEach.call(elements, function(el) {
+    callback(el);
+  });
+}
+
 function onLoad() {
-  doToggle('.hide-default');
+  hideElement('.hide-default');
   eventListeners();
 }
 window.onload = onLoad();

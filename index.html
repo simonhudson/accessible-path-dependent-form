@@ -13,12 +13,12 @@
   <fieldset>
     <legend>Football fan?</legend>
     <label for="football-fan-yes">Yes</label>
-    <input data-toggle="js-team-toggle" id="football-fan-yes" name="football-fan" type="radio" value="yes" />
+    <input data-toggle="team" id="football-fan-yes" name="football-fan" type="radio" value="yes" />
     <label for="football-fan-no">No</label>
     <input id="football-fan-no" name="football-fan" type="radio" value="no" />
   </fieldset>
 
-  <fieldset class="hide-default js-team-toggle">
+  <fieldset class="hide-default" data-toggle-target="team">
     <legend>Your team</legend>
     <label for="team">Choose team</label>
     <select id="team" name="team">
