@@ -33,8 +33,8 @@ function eventListeners() {
 
 function forEach(selector, callback) {
   var elements = document.querySelectorAll(selector);
-  Array.prototype.forEach.call(elements, function(el) {
-    callback(el);
+  [].forEach.call(elements, function(el, i, arr) {
+    callback(el, i, arr);
   });
 }
 
